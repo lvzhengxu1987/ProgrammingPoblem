@@ -10,22 +10,25 @@ def FFibonacci(n):
 def FFibonacci(n):
     suma = 0
     sumb = 0
-    sum = 0
+    ssum = 0
     for i in range(n):
         if  i < 0:
             break
-        if i == 0 or i == 1:
-            suma = suma + 1
+        if   i == 0:
+            ssum = 1
+            suma=1
+            sumb=0 
+        elif i == 1:
+            suma = 1
             sumb = 1
-            sum = suma
+            ssum = suma + sumb
         else:
+            ssum = suma + sumb
             sumb = suma
-            sum = suma + sumb
-            suma = sum
-
-    return sum
+            suma = ssum
+    return ssum
 #'''
-print FFibonacci(11)
+print FFibonacci(7)
 
 '''
 i = 0
