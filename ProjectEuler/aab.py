@@ -14,32 +14,28 @@ def FFibonacci(n):
     for i in range(n):
         if  i < 0:
             break
-        if   i == 0:
-            ssum = 1
+        if   i == 0 or i == 1:
             suma=1
-            sumb=0 
-        elif i == 1:
-            suma = 1
-            sumb = 1
-            ssum = suma + sumb
+            sumb=1
+            ssum = 1
         else:
             ssum = suma + sumb
             sumb = suma
             suma = ssum
     return ssum
 #'''
-print FFibonacci(7)
 
-'''
-i = 0
-sum = 0
+#for i in range(1,100):
+#    print i , FFibonacci(i)
+
+i = 1
+ssum = 0
+suma = 0
 while True:
     value = FFibonacci(i)
-    print value
-    i += 1
     if value % 2 == 0 and value <= 4000000 :
-        sum += value
-    if value > 4000000 :
+        ssum += value
+    elif value > 4000000 :
         break
-print sum
-'''
+    i += 1
+print ssum
